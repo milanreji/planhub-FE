@@ -1,31 +1,33 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import TextField from "../../components/TextField";
-import Button from "../../components/Button";
+import { validation } from "./const";
 
 const Login = () => {
+  const { register, handleSubmit } = useForm();
+  const handleRegistration = (data) => console.log(data);
   return (
-    <form className="h-full flex flex-col items-center justify-center gap-10 ">
+    <form
+      className="h-full flex flex-col items-center justify-center gap-10"
+      onSubmit={handleSubmit(handleRegistration)}
+    >
       <div className="flex flex-col justify-start gap-2">
         <TextField
-          id="email"
-          type="email"
+          validation={validation.email}
           label="Email"
-          labelclassName="text-xl"
-          inputClassName="min-h-10 border-2 border-green-900 border-solid rounded-md text-italic indent-3.5	"
-          placeholder="Enter your Email"
+          name="email"
+          type="email"
+          register={register}
         />
-      </div>
-      <div className="flex flex-col justify-start gap-2">
         <TextField
-          id="password"
-          type="password"
+          validation={validation.password}
           label="Password"
-          labelclassName="text-xl"
-          inputClassName="min-h-10	border-2 border-green-900 border-solid rounded-md	indent-3.5"
-          placeholder="Enter your Password"
+          name="password"
+          type="password"
+          register={register}
         />
+        <Button label="Login" />
       </div>
-      <Button type="submit" buttonContent="Sign In" className=""></Button>
     </form>
   );
 };

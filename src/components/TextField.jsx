@@ -1,27 +1,20 @@
 import React from "react";
 
-const TextField = ({
-  id,
-  type,
-  label,
-  placeholder,
-  inputClassName,
-  labelClassName,
-}) => {
+const TextField = ({ label, type, name, register, validation }) => {
   return (
     <>
-      <label htmlFor={id} className={labelClassName}>
-        {label}
-      </label>{" "}
+      <label className="text-xl">{label}</label>
       <input
-        className={inputClassName}
+        id={name}
+        className="min-h-10 border-2 border-green-900 border-solid rounded-md text-italic indent-3.5"
+        name={name}
         type={type}
-        id={id}
-        placeholder={placeholder}
-        alt=""
+        {...register(name, validation)}
       />
     </>
   );
 };
 
 export default TextField;
+
+//https://github.com/milanreji/planhub-FE.git
