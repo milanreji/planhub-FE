@@ -1,14 +1,8 @@
 import React from "react";
 
-const TextField = ({
-  label,
-  name,
-  type = "text",
-  register,
-  validation
-}) => {
+const TextField = ({ label, type, name, register, validation }) => {
   return (
-    <div>
+    <>
       <label className="text-xl">{label}</label>
       <input
         id={name}
@@ -17,7 +11,7 @@ const TextField = ({
         type={type}
         {...register(name, validation)}
       />
-    </div>
+    </>
   );
 };
 

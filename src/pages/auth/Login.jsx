@@ -8,7 +8,7 @@ const Login = () => {
   const handleRegistration = (data) => console.log(data);
   return (
     <form
-      className="h-full flex flex-col items-center justify-center gap-10 "
+      className="h-full flex flex-col items-center justify-center gap-10"
       onSubmit={handleSubmit(handleRegistration)}
     >
       <div className="flex flex-col justify-start gap-2">
@@ -26,7 +26,7 @@ const Login = () => {
           type="password"
           register={register}
         />
-        <button>Submit</button>
+        <Button label="Login" />
       </div>
     </form>
   );

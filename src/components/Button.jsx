@@ -1,10 +1,10 @@
 import React from "react";
 
-function Button({ buttonType, buttonContent, className }) {
+function Button({ label }) {
   return (
-    <>
-      <button type={buttonType}>{buttonContent}</button>
-    </>
+    <button className="text-white bg-red-400 rounded-lg w-64 h-10">
+      {label}
+    </button>
   );
 }
 
