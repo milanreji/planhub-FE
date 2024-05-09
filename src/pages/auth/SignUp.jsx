@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "../../components/TextField";
 import { validation } from "./const";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -20,6 +21,7 @@ const SignUp = () => {
           name="name"
           type="text"
           register={register}
+          placeholder="Enter your Username"
         />
         <TextField
           validation={validation.name}
@@ -27,6 +29,7 @@ const SignUp = () => {
           name="name"
           type="text"
           register={register}
+          placeholder="Enter your FullName"
         />
         <TextField
           validation={validation.email}
@@ -34,6 +37,7 @@ const SignUp = () => {
           name="email"
           type="email"
           register={register}
+          placeholder="Enter your Email"
         />
         <TextField
           validation={validation.password}
@@ -41,9 +45,17 @@ const SignUp = () => {
           name="password"
           type="password"
           register={register}
+          placeholder="Enter your Password"
         />
-
         <Button label={"SignUp"} />
+        {/* <div className="text-blue-300 flex flex-col items-center justify-center"> */}
+        <div className="flex flex-row items-center justify-center">
+          Already have an account?
+          <Link className="font-bold text-blue-300 ml-1" to={"/login"}>
+            Login
+          </Link>
+        </div>
+        {/* </div> */}
       </div>
     </form>
   );

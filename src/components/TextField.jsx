@@ -1,6 +1,13 @@
 import React from "react";
 
-const TextField = ({ label, type, name, register, validation }) => {
+const TextField = ({
+  label,
+  type,
+  name,
+  register,
+  validation,
+  placeholder,
+}) => {
   return (
     <>
       <label className="text-xl">{label}</label>
@@ -10,6 +17,7 @@ const TextField = ({ label, type, name, register, validation }) => {
         name={name}
         type={type}
         {...register(name, validation)}
+        placeholder={placeholder}
       />
     </>
   );
