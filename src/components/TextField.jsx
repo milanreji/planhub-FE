@@ -10,10 +10,10 @@ const TextField = ({
 }) => {
   return (
     <>
-      <label className="text-xl">{label}</label>
+      <label className="text-xl font-serif">{label}</label>
       <input
         id={name}
-        className="min-h-10 border-2 border-green-900 border-solid rounded-md text-italic indent-3.5"
+        className="min-h-10 w-96 border border-green-900 border-solid rounded-md font-extralight text-italic indent-3.5 bg-transparent"
         name={name}
         type={type}
         {...register(name, validation)}

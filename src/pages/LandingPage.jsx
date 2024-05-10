@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import wallpaper from "../assets/wallpaper.jpg"
 
 //https://wallpapers.com/images/hd/white-color-curved-lines-nposrbfoxgtt30hw.jpg
 //https://png.pngtree.com/background/20210716/original/pngtree-white-abstract-vector-web-background-design-picture-image_1354906.jpg
 
 const LandingPage = () => {
   return (
-    <div className="bg-[url('https://png.pngtree.com/background/20210716/original/pngtree-white-abstract-vector-web-background-design-picture-image_1354906.jpg')] w-full h-full flex flex-col">
-      <div className="grid grid-cols-4 gap-4 space-y-6 bg-white border-b-2 border-red-600">
+    <div className={`w-full h-full flex flex-col`}>
+      <div className="grid grid-cols-4 gap-4 space-y-6 bg-white border-b-2 ">
         <div className="flex flex-row col-span-2">
           <img
             className="h-20 w-20"
@@ -42,20 +43,29 @@ const LandingPage = () => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center pt-32">
-        <div className="font-bold text-[45px] self-start">Welcome</div>
-        <div className="text-[30px] font-thin pl-2">
-          Effortlessly organize tasks, streamline workflows, and boost
-          productivity with our intuitive Kanban board. Visualize your work in
-          progress, collaborate seamlessly, and stay on top of deadlines—all in
-          one place
-        </div>
-        <Link
-          to={"/signup"}
-          className="flex flex-col items-center justify-center hover:bg-red-400 bg-red-600 rounded-3xl w-56 h-10 text-white"
+      <div className="abc">
+        <div className="flex flex-col pt-40 abc"
+         style={{ 
+          height: '700px',
+          backgroundImage: `url('src/assets/wallpaper1.jpg')`, 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
         >
-          Get Started
-        </Link>
+          <div className="text-[30px] font-thin pl-48 pb-10 pr-96">
+            Effortlessly organize tasks, streamline workflows, and boost
+            productivity with our intuitive Kanban board. Visualize your work in
+            progress, collaborate seamlessly, and stay on top of deadlines—all in
+            one place
+          </div>
+          <Link
+            to={"/signup"}
+            className="flex flex-col items-center justify-center self-center hover:bg-red-400 bg-red-600 rounded-3xl w-56 h-10 text-white"
+          >
+            Get Started
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const HomeLayout = () => {
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center ">
+    <div className="h-full w-full">
       <Outlet />
     </div>
   );
