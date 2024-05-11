@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Image from "../../components/Image";
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const handleRegistration = (data) => console.log(data);
 
   return (
@@ -16,8 +16,11 @@ const Login = () => {
       <div className="col-span-2 flex items-center justify-center">
         <form onSubmit={handleSubmit(handleRegistration)}>
           <div className="flex flex-col gap-2">
+            <div className="text-[2.5rem] font-mono self-center">Login</div>
             <TextField
               validation={validation.email}
+              errorMessage={errors?.email && errors.email.message}
+              error={errors.email}
               label="Email"
               name="email"
               type="email"
@@ -26,6 +29,8 @@ const Login = () => {
             />
             <TextField
               validation={validation.password}
+              errorMessage={errors?.password && errors.password.message}
+              error={errors.password}
               label="Password"
               name="password"
               type="password"
@@ -33,7 +38,7 @@ const Login = () => {
               placeholder="Enter your Password"
             />
             <Link
-              className="flex flex-col items-end text-blue-600 hover:underline font-mono"
+              className="self-end text-blue-600 hover:underline font-mono"
               to={"/forgot-password"}
             >
               Forgot Password{" "}

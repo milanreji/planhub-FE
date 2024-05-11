@@ -1,6 +1,6 @@
 export const validation = {
-  name: { required: "Username is required" },
-  username: { required: "Fullname is required" },
+  userName: { required: "Username is required" },
+  fullName: { required: "Fullname is required" },
   email: {
     required: "Email is required",
     pattern: {
