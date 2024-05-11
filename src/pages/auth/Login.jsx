@@ -33,15 +33,15 @@ const Login = () => {
               placeholder="Enter your Password"
             />
             <Link
-              className="flex flex-col items-end font-serif text-blue-500"
+              className="flex flex-col items-end text-blue-600 hover:underline font-mono"
               to={"/forgot-password"}
             >
               Forgot Password{" "}
             </Link>
             <Button label="Login" />
-            <div className="flex flex-row items-center justify-center font-serif">
+            <div className="flex flex-row items-center justify-center ">
               Don't have an account?
-              <Link className="font-serif text-blue-500 ml-1" to={"/signup"}>
+              <Link className="font-mono text-blue-600 ml-1 hover:underline" to={"/signup"}>
                 SignUp
               </Link>
             </div>

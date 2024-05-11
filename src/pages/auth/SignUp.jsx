@@ -13,11 +13,8 @@ const SignUp = () => {
   return (
     <div className="grid grid-cols-4 w-full h-full">
       <Image />
-      <div className="col-span-2 flex items-center justify-center">
-        <form
-          className="h-full flex flex-col items-center justify-center gap-10"
-          onSubmit={handleSubmit(handleRegistration)}
-        >
+      <div className="col-span-2 flex flex-col items-center justify-center">
+        <form onSubmit={handleSubmit(handleRegistration)}>
           <div className="flex flex-col justify-start gap-2">
             <TextField
               validation={validation.username}
@@ -51,15 +48,14 @@ const SignUp = () => {
               register={register}
               placeholder="Enter your Password"
             />
+            <div></div>
             <Button label={"SignUp"} />
-            {/* <div className="text-blue-300 flex flex-col items-center justify-center"> */}
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-row items-center justify-center pt-3">
               Already have an account?
-              <Link className="font-bold text-blue-300 ml-1" to={"/login"}>
+              <Link className=" text-blue-600 ml-1 hover:underline font-mono" to={"/login"}>
                 Login
               </Link>
             </div>
-            {/* </div> */}
           </div>
         </form>
       </div>
