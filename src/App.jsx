@@ -4,6 +4,7 @@ import SignUp from "./pages/auth/SignUp";
 import Login from "./pages/auth/Login";
 import HomeLayout from "./pages/HomeLayout";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import Error from "./pages/error/Error";
 
 const router = createBrowserRouter([
   {
@@ -62,3 +63,6 @@ function App() {
 }
 
 export default App;
+
+
+//https://github.com/milanreji/planhub-FE.git

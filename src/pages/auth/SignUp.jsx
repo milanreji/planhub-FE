@@ -62,7 +62,7 @@ const SignUp = () => {
               placeholder="Enter your Password"
             />
             <div></div>
-            <Button label={"SignUp"} />
+            <Button label={"Sign Up"} />
             <div className="flex flex-row items-center justify-center pt-3">
               Already have an account?
               <Link
