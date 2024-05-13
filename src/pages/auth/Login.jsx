@@ -7,7 +7,11 @@ import { Link } from "react-router-dom";
 import Image from "../../components/Image";
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const handleRegistration = (data) => console.log(data);
 
   return (
@@ -46,7 +50,10 @@ const Login = () => {
             <Button label="Login" />
             <div className="flex flex-row items-center justify-center ">
               Don't have an account?
-              <Link className="font-mono text-blue-600 ml-1 hover:underline" to={"/signup"}>
+              <Link
+                className="font-mono text-blue-600 ml-1 hover:underline"
+                to={"/signup"}
+              >
                 SignUp
               </Link>
             </div>

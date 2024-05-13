@@ -5,6 +5,7 @@ import Login from "./pages/auth/Login";
 import HomeLayout from "./pages/HomeLayout";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Error from "./pages/error/Error";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "reset-password",
+        element: <ResetPassword />,
       },
       // {
       //   path: "dashboard",
@@ -63,6 +68,5 @@ function App() {
 }
 
 export default App;
-
 
 //https://github.com/milanreji/planhub-FE.git
