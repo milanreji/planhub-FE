@@ -14,7 +14,7 @@ const Body = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="text-[30px] font-thin pl-48 pb-10 pr-96">
+          <div className="md:text-[30px] font-thin md:pl-48 md:pb-10 md:pr-96">
             Effortlessly organize tasks, streamline workflows, and boost
             productivity with our intuitive Kanban board. Visualize your work in
             progress, collaborate seamlessly, and stay on top of deadlines—all
