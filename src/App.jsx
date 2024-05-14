@@ -6,6 +6,7 @@ import HomeLayout from "./pages/HomeLayout";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Error from "./pages/error/Error";
 import ResetPassword from "./pages/auth/ResetPassword";
+import Dashboard from "./pages/Dashboard"
 
 const router = createBrowserRouter([
   {
@@ -33,32 +34,17 @@ const router = createBrowserRouter([
         path: "reset-password",
         element: <ResetPassword />,
       },
-      // {
-      //   path: "dashboard",
-      //   element: <DashboardLayout />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <AddJob />,
-      //     },
-      //     {
-      //       path: "stats",
-      //       element: <Stats />,
-      //     },
-      //     {
-      //       path: "all-job",
-      //       element: <AllJob />,
-      //     },
-      //     {
-      //       path: "profile",
-      //       element: <Profile />,
-      //     },
-      //     {
-      //       path: "admin",
-      //       element: <Admin />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            index: true,
+            element: <ResetPassword />,
+          },
+          
+        ],
+      },
     ],
   },
 ]);

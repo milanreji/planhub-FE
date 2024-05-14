@@ -5,7 +5,7 @@ import Body from "../components/landingPage/Body";
 
 const LandingPage = () => {
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-full md:flex flex-col">
       <NavBar />
       <Body />
       <Footer />

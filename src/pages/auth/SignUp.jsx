@@ -42,6 +42,16 @@ const SignUp = () => {
               placeholder="Enter your FullName"
             />
             <TextField
+              validation={validation.lastName}
+              errorMessage={errors?.lastName && errors.lastName.message}
+              error={errors.lastName}
+              label="Lastname"
+              name="lastName"
+              type="text"
+              register={register}
+              placeholder="Enter your Lastname"
+            />
+            <TextField
               validation={validation.email}
               errorMessage={errors?.email && errors.email.message}
               error={errors.email}
@@ -52,7 +62,13 @@ const SignUp = () => {
               placeholder="Enter your Email"
             />
             <TextField
-              validation={validation.password}
+              validation={{
+                ...validation.password,
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters long",
+                },
+              }}
               errorMessage={errors?.password && errors.password.message}
               error={errors.password}
               label="Password"
