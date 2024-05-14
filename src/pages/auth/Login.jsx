@@ -15,9 +15,9 @@ const Login = () => {
   const handleRegistration = (data) => console.log(data);
 
   return (
-    <div className="grid grid-cols-4 grid-rows-2 w-full h-full  ">
+    <div className="grid grid-cols-4 w-full h-full  ">
       <Image />
-      <div className="md:col-span-2 md:row-span-2 col-span-4 row-span-1 flex items-center justify-center">
+      <div className="md:col-span-2 md:row-span-2 col-span-4 flex items-center justify-center">
         <form onSubmit={handleSubmit(handleRegistration)}>
           <div className="flex flex-col gap-2">
             <div className="text-[2.5rem] font-mono self-center">Login</div>

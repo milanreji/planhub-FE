@@ -17,9 +17,9 @@ const SignUp = () => {
   return (
     <div className="grid grid-cols-4 w-full h-full">
       <Image />
-      <div className="col-span-2 flex flex-col items-center justify-center">
+      <div className="md:col-span-2 md:row-span-2 col-span-4 flex items-center justify-center">
         <form onSubmit={handleSubmit(handleRegistration)}>
-          <div className="flex flex-col justify-start gap-2">
+          <div className="flex flex-col gap-2">
             <div className="text-[2.5rem] font-mono self-center">SignUp</div>
             <TextField
               validation={validation.userName}

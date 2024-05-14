@@ -5,14 +5,7 @@ const Body = () => {
   return (
     <div className="flex flex-col">
         <div
-          className="flex flex-col pt-40"
-          style={{
-            height: "700px",
-            backgroundImage: `url('src/assets/wallpaper1.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="flex flex-col pt-40 h-[700px] bg-cover bg-center bg-no-repeat bg-wallpaper"
         >
           <div className="md:text-[30px] font-thin md:pl-48 md:pb-10 md:pr-96">
             Effortlessly organize tasks, streamline workflows, and boost
