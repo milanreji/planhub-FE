@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { validation } from "./const";
 import Button from "../../components/Button";
-import Login from "./Login";
 import Image from "../../components/Image";
 import leftArrow from "../../assets/leftArrow.svg";
 
