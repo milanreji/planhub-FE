@@ -1,6 +1,6 @@
 export const validation = {
   userName: { required: "Username is required" },
-  fullName: { required: "Fullname is required" },
+  firstName: { required: "Firstname is required" },
   lastName: { required: "Lastname is required" },
   email: {
     required: "Email is required",
@@ -10,6 +10,6 @@ export const validation = {
     },
   },
   password: {
-    required: "Password is required"
+    required: "Password is required",
   },
 };

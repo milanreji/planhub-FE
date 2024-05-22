@@ -5,6 +5,7 @@ import { validation } from "./const";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Image from "../../components/Image";
+import { apiRequest } from "../../services/apiWrapper";
 
 const SignUp = () => {
   const {
@@ -12,7 +13,15 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => console.log(data);
+  const handleRegistration = async (data) => {
+    console.log(data,'data');
+    try {
+      const response = await apiRequest("/user", 'POST', data);
+      console.log("Registration successful:", response);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
+  };
 
   return (
     <div className="grid grid-cols-4 w-full h-full">
@@ -21,7 +30,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit(handleRegistration)}>
           <div className="flex flex-col gap-2">
             <div className="text-[2.5rem] font-mono self-center">SignUp</div>
-            <TextField
+            {/* <TextField
               validation={validation.userName}
               errorMessage={errors?.userName && errors.userName.message}
               error={errors.userName}
@@ -30,13 +39,13 @@ const SignUp = () => {
               type="text"
               register={register}
               placeholder="Enter your Username"
-            />
+            /> */}
             <TextField
               validation={validation.fullName}
               errorMessage={errors?.fullName && errors.fullName.message}
               error={errors.fullName}
-              label="Fullname"
-              name="fullName"
+              label="Firstname"
+              name="firstname"
               type="text"
               register={register}
               placeholder="Enter your FullName"
@@ -46,7 +55,7 @@ const SignUp = () => {
               errorMessage={errors?.lastName && errors.lastName.message}
               error={errors.lastName}
               label="Lastname"
-              name="lastName"
+              name="lastname"
               type="text"
               register={register}
               placeholder="Enter your Lastname"
@@ -73,6 +82,22 @@ const SignUp = () => {
               error={errors.password}
               label="Password"
               name="password"
+              type="password"
+              register={register}
+              placeholder="Enter your Password"
+            />
+            <TextField
+              validation={{
+                ...validation.password,
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters long",
+                },
+              }}
+              errorMessage={errors?.password && errors.password.message}
+              error={errors.password}
+              label="Password"
+              name="confirmation_password"
               type="password"
               register={register}
               placeholder="Enter your Password"

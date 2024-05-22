@@ -7,11 +7,11 @@ import SquarePart from "../components/landingPage/SquarePart";
 const LandingPage = () => {
   return (
     <div className="w-full h-full md:flex flex-col">
-      <SquarePart />
+      {/* <SquarePart /> */}
 
-      {/* <NavBar />
+      <NavBar />
       <Body />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 };
