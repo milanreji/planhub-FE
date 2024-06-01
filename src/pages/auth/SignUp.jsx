@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Image from "../../components/Image";
 import { apiRequest } from "../../services/apiWrapper";
+import { validateEmail, validatePassword } from "../utils/validations";
 
 const SignUp = () => {
   const {
@@ -15,7 +16,14 @@ const SignUp = () => {
   } = useForm();
   const handleRegistration = async (data) => {
     try {
-      console.log(data);
+      const emailValidation = validateEmail(data.email);
+      if (!emailValidation) {
+        throw new Error("Invalid Email format");
+      }
+      const passwordValidation = validatePassword(data.password);
+      if (!passwordValidation) {
+        throw new Error("Invalid password format");
+      }
       const response = await apiRequest("/auth/signup", "POST", data);
       console.log("Registration successful:", response);
     } catch (error) {
