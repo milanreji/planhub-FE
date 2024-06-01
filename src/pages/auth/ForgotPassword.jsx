@@ -6,6 +6,7 @@ import { validation } from "./const";
 import Button from "../../components/Button";
 import Image from "../../components/Image";
 import leftArrow from "../../assets/leftArrow.svg";
+import { apiRequest } from "../../services/apiWrapper";
 
 function ForgotPassword() {
   const {
@@ -13,8 +14,14 @@ function ForgotPassword() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => console.log(data);
-
+  const handleRegistration = async (data) => {
+    try {
+      const response = await apiRequest("/auth/forgot_password", "POST", data);
+      console.log("Registration successful:", response);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
+  };
   return (
     <div className="grid grid-cols-4 w-full h-full">
       <Image />

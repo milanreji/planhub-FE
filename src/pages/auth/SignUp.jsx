@@ -14,9 +14,9 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const handleRegistration = async (data) => {
-    console.log(data,'data');
     try {
-      const response = await apiRequest("/user", 'POST', data);
+      console.log(data);
+      const response = await apiRequest("/auth/signup", "POST", data);
       console.log("Registration successful:", response);
     } catch (error) {
       console.error("Registration failed:", error);
@@ -30,16 +30,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit(handleRegistration)}>
           <div className="flex flex-col gap-2">
             <div className="text-[2.5rem] font-mono self-center">SignUp</div>
-            {/* <TextField
-              validation={validation.userName}
-              errorMessage={errors?.userName && errors.userName.message}
-              error={errors.userName}
-              label="Username"
-              name="userName"
-              type="text"
-              register={register}
-              placeholder="Enter your Username"
-            /> */}
+
             <TextField
               validation={validation.fullName}
               errorMessage={errors?.fullName && errors.fullName.message}
@@ -96,7 +87,7 @@ const SignUp = () => {
               }}
               errorMessage={errors?.password && errors.password.message}
               error={errors.password}
-              label="Password"
+              label="Confirm Password"
               name="confirmation_password"
               type="password"
               register={register}

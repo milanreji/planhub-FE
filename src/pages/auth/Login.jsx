@@ -5,6 +5,7 @@ import { validation } from "./const";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Image from "../../components/Image";
+import { apiRequest } from "../../services/apiWrapper";
 
 const Login = () => {
   const {
@@ -12,7 +13,17 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => console.log(data);
+  const handleRegistration = async (data) => {
+    try {
+      data.username = data.email;
+      delete data.email;
+      console.log(data);
+      const response = await apiRequest("/auth/login", "POST", data);
+      console.log("Login successful:", response);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
+  };
 
   return (
     <div className="grid grid-cols-4 w-full h-full  ">
@@ -22,7 +33,7 @@ const Login = () => {
           <div className="flex flex-col gap-2">
             <div className="text-[2.5rem] font-mono self-center">Login</div>
             <TextField
-              validation={validation.email}
+              validation={validation.userName}
               errorMessage={errors?.email && errors.email.message}
               error={errors.email}
               label="Email"

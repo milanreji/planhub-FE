@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { validation } from "./const";
 import Button from "../../components/Button";
 import Image from "../../components/Image";
+import { apiRequest } from "../../services/apiWrapper";
 
 function ResetPassword() {
   const {
@@ -11,7 +12,20 @@ function ResetPassword() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegistration = (data) => console.log(data);
+  const handleRegistration = async (data) => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const token = searchParams.get("token");
+    data.token = token;
+    if (data.password !== data.confirmation_password) {
+      throw new Error("Passwords do not match");
+    }
+    try {
+      const response = await apiRequest("/auth/reset_password", "POST", data);
+      console.log("Rest password successful:", response);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
+  };
 
   return (
     <div className="grid grid-cols-4 w-full h-full">
@@ -33,8 +47,8 @@ function ResetPassword() {
             />
             <TextField
               validation={validation.password}
-              label="Password"
-              name="password"
+              label="Confirm Password"
+              name="confirmation_password"
               type="password"
               register={register}
               placeholder="Confirm your New Password"
